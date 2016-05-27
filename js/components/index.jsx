@@ -5,7 +5,7 @@ import Assessment from './assessment.jsx'
 import Results  from './results.jsx'
 import ContactTherapist  from './contact-therapist.jsx'
 
-
+//Entry point to the app
 
 var QuartetApp = React.createClass({
   render: function(){

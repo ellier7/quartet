@@ -8,17 +8,21 @@ var QuestionOptions = React.createClass({
     };
   },
 
+  /* When an answer is chosen, the corresponding score is set as this.state.selection
+  setTimeout is used to allow the user to see the answer highlighted in blue before moving
+  on to the next question */
   onSelection: function (e) {
     this.setState({
       selection: e.currentTarget.id
       });
     setTimeout(this.submitSelection, 100);
   },
-
+  //answer selections are highlighted when chosen
   isActive:function(id){
     return 'btn '+((id === this.state.selection) ? 'active' : 'default');
   },
-
+  /*the score for each question is passed to the score state in the Assessment component
+  this.state.selection is cleared so that no answer will be preselected on the next question*/
   submitSelection: function() {
     this.props.handleNext(this.state.selection)
     this.setState({ selection: '' });

@@ -6,6 +6,7 @@ import { Router, Route, Link } from 'react-router'
 
 
 var Results = React.createClass({
+  //The score is summed and assessed to determine the severity of depression
   scoreCategory: function() {
     var score = this.props.score.reduce((a, b) => a + b, 0);
     if (score > 19) {
@@ -21,15 +22,10 @@ var Results = React.createClass({
     }
   },
 
-  contactTherapist: function(therapist) {
-    return (
-      <ContactTherapist therapist={therapist}></ContactTherapist>
-      )
-  },
-
+  /*The score is summed. If it's over 14, 3 therapists are suggested.
+  Their data is in a separate file*/
   therapyOptions: function() {
     var score = this.props.score.reduce((a, b) => a + b, 0);
-
     if (score > 14) {
      return (therapists.map((therapist) => {
         return (

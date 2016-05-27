@@ -3,7 +3,7 @@ import QuestionOptions  from './question-options.jsx'
 
 
 var QuestionSlide = React.createClass({
-  
+  //questions come from a separate file
   render: function(){
     return (
       <div id="question-slide">
